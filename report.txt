@@ -1,0 +1,74 @@
+/usr/include/c++/11/bits/locale_facets.h:1088:16: note: ***** Analysis failed with vector mode VOID
+sum_rows.cpp:21:25: missed: couldn't vectorize loop
+sum_rows.cpp:27:29: missed: not vectorized: complicated access pattern.
+sum_rows.cpp:25:28: optimized: loop vectorized using 16 byte vectors
+sum_rows.cpp:10:1: note: vectorized 1 loops in function.
+sum_rows.cpp:31:1: note: ***** Analysis failed with vector mode V4SI
+sum_rows.cpp:31:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI
+sum_rows.cpp:71:19: missed: couldn't vectorize loop
+sum_rows.cpp:71:19: missed: not vectorized: control flow in loop.
+sum_rows.cpp:60:25: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __printf_chk (1, " %d ", _4);
+sum_rows.cpp:51:25: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __printf_chk (1, " %d ", _3);
+sum_rows.cpp:53:21: missed: couldn't vectorize loop
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __printf_chk (1, " %d ", _3);
+sum_rows.cpp:41:18: optimized: loop vectorized using 16 byte vectors
+sum_rows.cpp:33:5: note: vectorized 1 loops in function.
+sum_rows.cpp:79:1: missed: statement clobbers memory: saved_stack.5_30 = __builtin_stack_save ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __builtin_puts (&" Contents of the A[] array: "[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __printf_chk (1, " %d ", _3);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __builtin_putchar (10);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __builtin_puts (&" Contents of the y[] vector: "[0]);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __printf_chk (1, " %d ", _4);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __builtin_putchar (10);
+sum_rows.cpp:66:12: missed: statement clobbers memory: sum_rows (5, &A.72, &y.25);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:23: missed: statement clobbers memory: __printf_chk (1, " correctness check fails at i=%d\n", i_33);
+sum_rows.cpp:78:20: missed: statement clobbers memory: _37 = std::operator<< <std::char_traits<char> > (&cout, "Correctness check succeeds ");
+/usr/include/c++/11/bits/locale_facets.h:879:21: missed: statement clobbers memory: std::ctype<char>::_M_widen_init (_66);
+/usr/include/c++/11/bits/locale_facets.h:880:23: missed: statement clobbers memory: _86 = OBJ_TYPE_REF(_80;_66->6) (_66, 10);
+/usr/include/c++/11/ostream:685:19: missed: statement clobbers memory: _64 = std::basic_ostream<char>::put (_37, _63);
+/usr/include/c++/11/ostream:707:24: missed: statement clobbers memory: std::basic_ostream<char>::flush (_64);
+sum_rows.cpp:33:5: missed: statement clobbers memory: __builtin_stack_restore (saved_stack.5_30);
+/usr/include/c++/11/bits/basic_ios.h:50:18: missed: statement clobbers memory: std::__throw_bad_cast ();
+sum_rows.cpp:46:12: note: ***** Analysis succeeded with vector mode V4SI
+sum_rows.cpp:46:12: note: SLPing BB part
+sum_rows.cpp:46:12: note: Costing subgraph: 
+sum_rows.cpp:46:12: note: node 0x5437d48 (max_nunits=4, refcnt=1)
+sum_rows.cpp:46:12: note: op template: MEM[(int[0:D.49975] *)&y.25][0] = 0;
+sum_rows.cpp:46:12: note: 	stmt 0 MEM[(int[0:D.49975] *)&y.25][0] = 0;
+sum_rows.cpp:46:12: note: 	stmt 1 MEM[(int[0:D.49975] *)&y.25][1] = -1;
+sum_rows.cpp:46:12: note: 	stmt 2 MEM[(int[0:D.49975] *)&y.25][2] = -2;
+sum_rows.cpp:46:12: note: 	stmt 3 MEM[(int[0:D.49975] *)&y.25][3] = -3;
+sum_rows.cpp:46:12: note: 	children 0x5437dc0
+sum_rows.cpp:46:12: note: node (constant) 0x5437dc0 (max_nunits=1, refcnt=1)
+sum_rows.cpp:46:12: note: 	{ 0, -1, -2, -3 }
+sum_rows.cpp:46:12: note: Cost model analysis: 
+sum_rows.cpp:46:12: note: Cost model analysis for part in loop 0:
+  Vector cost: 24
+  Scalar cost: 48
+sum_rows.cpp:46:12: note: Basic block will be vectorized using SLP
+sum_rows.cpp:46:12: note: Vectorizing SLP tree:
+sum_rows.cpp:46:12: note: node 0x5437d48 (max_nunits=4, refcnt=1)
+sum_rows.cpp:46:12: note: op template: MEM[(int[0:D.49975] *)&y.25][0] = 0;
+sum_rows.cpp:46:12: note: 	stmt 0 MEM[(int[0:D.49975] *)&y.25][0] = 0;
+sum_rows.cpp:46:12: note: 	stmt 1 MEM[(int[0:D.49975] *)&y.25][1] = -1;
+sum_rows.cpp:46:12: note: 	stmt 2 MEM[(int[0:D.49975] *)&y.25][2] = -2;
+sum_rows.cpp:46:12: note: 	stmt 3 MEM[(int[0:D.49975] *)&y.25][3] = -3;
+sum_rows.cpp:46:12: note: 	children 0x5437dc0
+sum_rows.cpp:46:12: note: node (constant) 0x5437dc0 (max_nunits=1, refcnt=1)
+sum_rows.cpp:46:12: note: 	{ 0, -1, -2, -3 }
+sum_rows.cpp:46:12: note: ------>vectorizing SLP node starting from: MEM[(int[0:D.49975] *)&y.25][0] = 0;
+sum_rows.cpp:46:12: note: vect_is_simple_use: operand -1, type of def: constant
+sum_rows.cpp:46:12: note: vect_is_simple_use: operand -2, type of def: constant
+sum_rows.cpp:46:12: note: vect_is_simple_use: operand -3, type of def: constant
+sum_rows.cpp:46:12: note: transform store. ncopies = 1
+sum_rows.cpp:46:12: note: create vector_type-pointer variable to type: vector(4) int  vectorizing a pointer ref: MEM[(int[0:D.49975] *)&y.25][0]
+sum_rows.cpp:46:12: note: created &MEM[(int[0:D.49975] *)&y.25][0]
+sum_rows.cpp:46:12: note: add new stmt: MEM <vector(4) int> [(int *)&y.25] = { 0, -1, -2, -3 };
+sum_rows.cpp:46:12: note: vectorizing stmts using SLP.
+sum_rows.cpp:46:12: optimized: basic block part vectorized using 16 byte vectors
+sum_rows.cpp:46:12: note: ***** The result for vector mode V16QI would be the same
+/usr/include/c++/11/iostream:74:25: missed: statement clobbers memory: std::ios_base::Init::Init (&__ioinit);
+/usr/include/c++/11/iostream:74:25: missed: statement clobbers memory: __cxxabiv1::__cxa_atexit (__dt_comp , &__ioinit, &__dso_handle);
+sum_rows.cpp:79:1: note: ***** Analysis failed with vector mode VOID
