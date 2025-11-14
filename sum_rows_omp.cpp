@@ -47,8 +47,6 @@ int main(int ac, char*av[])
    for (int i=0; i<N; i++)
       y[i] = -1 * i;
 
-   std::cout << omp_get_num_threads() << " threads" << std::endl;
-
    // print out the A array
    printf(" Contents of the A[] array: \n");
    for (int indx=0,i=0;i<N;i++)
@@ -67,6 +65,7 @@ int main(int ac, char*av[])
    printf("\n");
 
    sum_rows(N, A, y);
+   std::cout << omp_get_num_threads() << " thread(s)" << std::endl;
 
    // now do verification check
    int t=y[0], err=0, i;
