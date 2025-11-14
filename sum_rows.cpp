@@ -18,7 +18,6 @@ sum_rows(int N, int A[], int y[])
    // all N coluimns of row row A[i,*] and place the sum into y[i]
 
    // Put your code here, return the correct result
-    #pragma omp parallel for
    for(int row = 0; row < N; row++)
    {
       int sum = 0;
@@ -65,7 +64,6 @@ int main(int ac, char*av[])
    printf("\n");
 
    sum_rows(N, A, y);
-   std::cout << omp_get_num_threads() << " thread(s)" << std::endl;
 
    // now do verification check
    int t=y[0], err=0, i;
