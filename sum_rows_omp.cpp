@@ -30,7 +30,6 @@ sum_rows(int N, int A[], int y[])
       }
       y[row] = sum;
    }
-   std::cout << omp_get_num_threads() << " threads" << std::endl;
 }
 
 int main(int ac, char*av[])
@@ -48,6 +47,7 @@ int main(int ac, char*av[])
    for (int i=0; i<N; i++)
       y[i] = -1 * i;
 
+   std::cout << omp_get_num_threads() << " threads" << std::endl;
 
    // print out the A array
    printf(" Contents of the A[] array: \n");
