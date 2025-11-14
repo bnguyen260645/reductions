@@ -66,7 +66,7 @@ int main(int ac, char*av[])
 
    sum_rows(N, A, y);
 
-   #pragma omp parallel
+   #pragma omp parallel {}
    std::cout << omp_get_num_threads() << " thread(s)" << std::endl;
 
    // now do verification check
